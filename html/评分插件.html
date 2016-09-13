@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no" name="format-detection">
+	<title>评分插件</title>
+	<script src="../public/zepto.min.js"></script>
+	<script src="../public/start.js"></script>
+	<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+	<link rel="stylesheet" href="../css/comments.css">
+	<style>
+		/*
+		这里的样式完全是按照评论页面做的(comment.html)星星布局方式
+		*/
+		.startBox {
+			margin-top: 10px;
+			height: 40px;
+		}
+		.startBox span {
+			width: 30px;
+			height: 30px;
+			background-image: url("../imgs/sstart.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			float: left;
+			margin-right: 10px;
+		}
+		.startBox span.active {
+			background-image: url("../imgs/bstart.png");
+		}
+	</style>
+</head>
+<body>
+	<!--结构-->
+	<div class="startBox clearfix" id="startBox">
+		<input type="hidden">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<div class="startBox clearfix" id="startBox1">
+		<input type="hidden">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div class="startBox clearfix" id="startBox2">
+		<input type="hidden">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div class="startBox clearfix" id="startBox3">
+		<input type="hidden">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div class="startBox clearfix" id="startBox4">
+		<input type="hidden">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</body>
+<script>
+	// 例子
+	// $('#startBox').start({
+	// 	// 初始时的设定多少个星星
+	// 	startNum: 1,
+	// 	// 回调函数
+	// 	getClickNum: function (num) {
+	// 		console.log(num);
+	// 	}
+	// });
+	// 多个的话 可以做一个循环 设置不同的startNum就可以了
+	// $('#startBox1').start({
+	// 	startNum: 3,
+	// 	getClickNum: function (num) {
+	// 		console.log(num);
+	// 	}
+	// });
+
+	var startBox = $('.startBox');
+	for(var i = 0; i < startBox.length; i++){
+		startBox.eq(i).start({
+			startNum: 1,
+			getClickNum: function(num){
+				console.log(num);
+			}
+		})
+	}
+</script>
+</html>
